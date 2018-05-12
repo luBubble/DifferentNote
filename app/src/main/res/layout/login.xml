@@ -22,13 +22,13 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="@string/register"
+            android:text="@string/login"
             android:textColor="@color/textGray"
             android:textSize="20sp" />
     </android.support.v7.widget.Toolbar>
 
     <EditText
-        android:id="@+id/register_account"
+        android:id="@+id/login_account"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginTop="50dp"
@@ -46,7 +46,7 @@
         android:background="@drawable/edit_text_rounded"/>
 
     <EditText
-        android:id="@+id/register_first_psw"
+        android:id="@+id/login_psw"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginTop="40dp"
@@ -62,41 +62,24 @@
         android:textColor="@color/textGray"
         android:background="@drawable/edit_text_rounded"/>
 
-    <EditText
-        android:id="@+id/register_confirm_psw"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:inputType="textPassword"
-        android:hint="输入确认密码"
-        android:textColorHint="@color/hintTextGray"
-        android:textColor="@color/textGray"
-        android:background="@drawable/edit_text_rounded"/>
-
     <Button
-        android:id="@+id/btn_register"
+        android:id="@+id/btn_login"
         android:layout_width="120dp"
         android:layout_height="46dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/button_shape"
-        android:text="@string/register"
+        android:text="@string/login"
         android:textSize="18sp"
         android:textColor="@color/textGray"
         android:layout_gravity="center"/>
 
     <TextView
-        android:id="@+id/link_login"
+        android:id="@+id/link_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_gravity="center"
-        android:text="@string/goto_login"
+        android:text="@string/goto_register"
         android:textColor="@color/link_text"
         android:textSize="16sp" />
 
