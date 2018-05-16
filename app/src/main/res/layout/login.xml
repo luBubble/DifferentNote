@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -29,56 +28,56 @@
 
     <EditText
         android:id="@+id/login_account"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edit_text_rounded"
+        android:ems="30"
+        android:hint="输入手机或邮箱"
+        android:inputType="text"
         android:paddingBottom="5dp"
-        android:paddingTop="5dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:ems="30"
-        android:inputType="text"
-        android:hint="输入手机或邮箱"
-        android:textColorHint="@color/hintTextGray"
+        android:paddingTop="5dp"
         android:textColor="@color/textGray"
-        android:background="@drawable/edit_text_rounded"/>
+        android:textColorHint="@color/hintTextGray" />
 
     <EditText
         android:id="@+id/login_psw"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="50dp"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edit_text_rounded"
+        android:hint="输入密码"
+        android:inputType="textPassword"
         android:paddingBottom="5dp"
-        android:paddingTop="5dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:inputType="textPassword"
-        android:hint="输入密码"
-        android:textColorHint="@color/hintTextGray"
+        android:paddingTop="5dp"
         android:textColor="@color/textGray"
-        android:background="@drawable/edit_text_rounded"/>
+        android:textColorHint="@color/hintTextGray" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="120dp"
         android:layout_height="46dp"
+        android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:background="@drawable/button_shape"
         android:text="@string/login"
-        android:textSize="18sp"
         android:textColor="@color/textGray"
-        android:layout_gravity="center"/>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/link_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_gravity="center"
+        android:layout_marginTop="40dp"
         android:text="@string/goto_register"
         android:textColor="@color/link_text"
         android:textSize="16sp" />

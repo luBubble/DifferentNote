@@ -4,4 +4,5 @@
     <string name="register">注册</string>
     <string name="goto_login"><u>已有账号，前往登录</u></string>
     <string name="goto_register"><u>没有账号，前往注册</u></string>
+    <string name="list">清单分类</string>
 </resources>

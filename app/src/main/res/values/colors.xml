@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#D0F2E4</color>
+    <color name="colorPrimaryDark">#D0F2E4</color>
     <color name="colorAccent">#FF4081</color>
     <color name="mainBule">#D0F2E4</color>
     <color name="textGray">#4E615F</color>
     <color name="hintTextGray">#BBBBBB</color>
     <color name="shallowBule">#F2FFFA</color>
+    <color name="worddarkgreen">#6A8583</color>
 </resources>
