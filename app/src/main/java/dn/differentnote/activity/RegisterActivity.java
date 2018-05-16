@@ -3,6 +3,7 @@ package dn.differentnote.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
@@ -102,7 +103,9 @@ public class RegisterActivity extends Activity {
                                 @Override
                                 public void onFailure(Call call, IOException e) {
                                     Log.d(TAG, "onFailure: 无法连接服务器");
+                                    Looper.prepare();//解决线程 1
                                     Toast.makeText(RegisterActivity.this, "无法连接服务器", Toast.LENGTH_LONG).show();
+                                    Looper.loop();
                                 }
                                 @Override
                                 public void onResponse(Call call, Response response) throws IOException {
@@ -111,12 +114,13 @@ public class RegisterActivity extends Activity {
                                     {
                                         JSONObject MsgJson=new JSONObject(Msg);
                                         Log.d(TAG, MsgJson.getString("msg"));
+                                        Looper.prepare();//解决线程 1
                                         Toast.makeText(RegisterActivity.this, MsgJson.getString("msg"), Toast.LENGTH_LONG).show();
                                         if(MsgJson.getString("msg").equals("注册成功"))
                                         {
                                             //跳转页面
                                         }
-
+                                        Looper.loop();
                                     }
                                     catch (Exception e)
                                     {

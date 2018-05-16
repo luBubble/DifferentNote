@@ -3,6 +3,7 @@ package dn.differentnote.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -40,7 +42,7 @@ public class LoginActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.register);
+        setContentView(R.layout.login);
         bindViews();
     }
 
@@ -83,20 +85,24 @@ public class LoginActivity extends Activity {
                                 @Override
                                 public void onFailure(Call call, IOException e) {
                                     Log.d(TAG, "onFailure: 无法连接服务器");
-                                    Toast.makeText(LoginActivity.this, "无法连接服务器", Toast.LENGTH_LONG).show();
+                                    Looper.prepare();//解决线程 1
+                                    Toast.makeText(LoginActivity.this, "无法连接服务器", Toast.LENGTH_SHORT).show();
+                                    Looper.loop();
                                 }
-
                                 @Override
                                 public void onResponse(Call call, Response response) throws IOException {
                                     String Msg = response.body().string();
                                     try {
                                         JSONObject MsgJson = new JSONObject(Msg);
                                         Log.d(TAG, MsgJson.getString("msg"));
-                                        Toast.makeText(LoginActivity.this, MsgJson.getString("msg"), Toast.LENGTH_LONG).show();
+                                        Looper.prepare();//解决线程 1
+                                        Toast.makeText(LoginActivity.this, MsgJson.getString("msg"), Toast.LENGTH_SHORT).show();
                                         if (MsgJson.getString("msg").equals("登录成功")) {
                                             //跳转页面
-
+                                            Intent test=new Intent(LoginActivity.this,TestActivity.class);
+                                            startActivity(test);
                                         }
+                                        Looper.loop();//解决线程 1
                                     } catch (Exception e) {
                                         e.printStackTrace();
                                     }
