@@ -10,6 +10,9 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import dn.differentnote.R;
+import dn.differentnote.fragment.MyFragmentCalendar;
+import dn.differentnote.fragment.MyFragmentList;
+import dn.differentnote.fragment.MyFragmentTomato;
 
 /**
  * Created by Coder-pig on 2015/8/28 0028.
@@ -17,46 +20,48 @@ import dn.differentnote.R;
 public class FragmentActivity extends AppCompatActivity implements View.OnClickListener{
 
     //UI Object
-    private TextView txt_channel;
-    private TextView txt_message;
-    private TextView txt_better;
-    private TextView txt_setting;
+    private TextView txt_list;
+    private TextView txt_calendar;
+    private TextView txt_tomato;
+    private TextView txt_mine;
     private FrameLayout ly_content;
 
     //Fragment Object
-    private MyFragment fg1,fg2,fg3,fg4;
+    private MyFragmentList fg1,fg4;
+    private MyFragmentCalendar fg2;
+    private MyFragmentTomato fg3;
     private FragmentManager fManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.fragmenttest);
+        setContentView(R.layout.fg_navigationbar);
         fManager = getFragmentManager();
         bindViews();
-        txt_channel.performClick();   //模拟一次点击，既进去后选择第一项
+        txt_list.performClick();   //模拟一次点击，既进去后选择第一项
     }
 
     //UI组件初始化与事件绑定
     private void bindViews() {
-        txt_channel = (TextView) findViewById(R.id.txt_channel);
-        txt_message = (TextView) findViewById(R.id.txt_message);
-        txt_better = (TextView) findViewById(R.id.txt_better);
-        txt_setting = (TextView) findViewById(R.id.txt_setting);
+        txt_list = (TextView) findViewById(R.id.txt_list);
+        txt_calendar = (TextView) findViewById(R.id.txt_calendar);
+        txt_tomato = (TextView) findViewById(R.id.txt_tomato);
+        txt_mine = (TextView) findViewById(R.id.txt_mine);
         ly_content = (FrameLayout) findViewById(R.id.ly_content);
 
-        txt_channel.setOnClickListener(this);
-        txt_message.setOnClickListener(this);
-        txt_better.setOnClickListener(this);
-        txt_setting.setOnClickListener(this);
+        txt_list.setOnClickListener(this);
+        txt_calendar.setOnClickListener(this);
+        txt_tomato.setOnClickListener(this);
+        txt_mine.setOnClickListener(this);
     }
 
     //重置所有文本的选中状态
     private void setSelected(){
-        txt_channel.setSelected(false);
-        txt_message.setSelected(false);
-        txt_better.setSelected(false);
-        txt_setting.setSelected(false);
+        txt_list.setSelected(false);
+        txt_calendar.setSelected(false);
+        txt_tomato.setSelected(false);
+        txt_mine.setSelected(false);
     }
 
     //隐藏所有Fragment
@@ -73,41 +78,41 @@ public class FragmentActivity extends AppCompatActivity implements View.OnClickL
         FragmentTransaction fTransaction = fManager.beginTransaction();
         hideAllFragment(fTransaction);
         switch (v.getId()){
-            case R.id.txt_channel:
+            case R.id.txt_list:
                 setSelected();
-                txt_channel.setSelected(true);
+                txt_list.setSelected(true);
                 if(fg1 == null){
-                    fg1 = new MyFragment("第一个Fragment");
+                    fg1 = new MyFragmentList("");
                     fTransaction.add(R.id.ly_content,fg1);
                 }else{
                     fTransaction.show(fg1);
                 }
                 break;
-            case R.id.txt_message:
+            case R.id.txt_calendar:
                 setSelected();
-                txt_message.setSelected(true);
+                txt_calendar.setSelected(true);
                 if(fg2 == null){
-                    fg2 = new MyFragment("第二个Fragment");
+                    fg2 = new MyFragmentCalendar("");
                     fTransaction.add(R.id.ly_content,fg2);
                 }else{
                     fTransaction.show(fg2);
                 }
                 break;
-            case R.id.txt_better:
+            case R.id.txt_tomato:
                 setSelected();
-                txt_better.setSelected(true);
+                txt_tomato.setSelected(true);
                 if(fg3 == null){
-                    fg3 = new MyFragment("第三个Fragment");
+                    fg3 = new MyFragmentTomato("");
                     fTransaction.add(R.id.ly_content,fg3);
                 }else{
                     fTransaction.show(fg3);
                 }
                 break;
-            case R.id.txt_setting:
+            case R.id.txt_mine:
                 setSelected();
-                txt_setting.setSelected(true);
+                txt_mine.setSelected(true);
                 if(fg4 == null){
-                    fg4 = new MyFragment("第四个Fragment");
+                    fg4 = new MyFragmentList("第四个Fragment");
                     fTransaction.add(R.id.ly_content,fg4);
                 }else{
                     fTransaction.show(fg4);

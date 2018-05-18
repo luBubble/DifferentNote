@@ -1,4 +1,4 @@
-package dn.differentnote.activity;
+package dn.differentnote.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -12,16 +12,16 @@ import dn.differentnote.R;
 /**
  * Created by Jay on 2015/8/28 0028.
  */
-public class MyFragment extends Fragment {
+public class MyFragmentCalendar extends Fragment {
 
     private String content;
-    public MyFragment(String content) {
+    public MyFragmentCalendar(String content) {
         this.content = content;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fg_content,container,false);
+        View view = inflater.inflate(R.layout.fg_calendar,container,false);
         TextView txt_content = (TextView) view.findViewById(R.id.txt_content);
         txt_content.setText(content);
         return view;
