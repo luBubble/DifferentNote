@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_selector">
+    <TextView
+        android:id="@+id/list_kind_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_list_kind"
+        android:drawablePadding="10dp"
+        android:text="@string/add_list"
+        android:textSize="16sp"
+        android:textColor="@color/textGray"
+        android:padding="15dp"
+        />
+</android.support.constraint.ConstraintLayout>

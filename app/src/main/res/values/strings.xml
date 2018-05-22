@@ -5,6 +5,20 @@
     <string name="goto_login"><u>已有账号，前往登录</u></string>
     <string name="goto_register"><u>没有账号，前往注册</u></string>
     <string name="list">清单分类</string>
+    <string name="lists">清单列表</string>
     <string name="calendar">日历</string>
     <string name="tomato">番茄</string>
+    <string name="things_today">今日日程</string>
+    <string name="things_done">已完成清单</string>
+    <string name="add_list">添加清单分类</string>
+    <string name="new_list">添加清单</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string-array name="repeat_strings">
+        <item>不重复</item>
+        <item>仅一次</item>
+        <item>每一天</item>
+        <item>每一周</item>
+        <item>每一月</item>
+    </string-array>
 </resources>

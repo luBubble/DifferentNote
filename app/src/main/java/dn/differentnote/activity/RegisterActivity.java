@@ -113,12 +113,18 @@ public class RegisterActivity extends Activity {
                                     try
                                     {
                                         JSONObject MsgJson=new JSONObject(Msg);
+                                        JSONObject userMsg=MsgJson.getJSONObject("data");
                                         Log.d(TAG, MsgJson.getString("msg"));
                                         Looper.prepare();//解决线程 1
                                         Toast.makeText(RegisterActivity.this, MsgJson.getString("msg"), Toast.LENGTH_LONG).show();
                                         if(MsgJson.getString("msg").equals("注册成功"))
                                         {
                                             //跳转页面
+                                            Bundle userMsgBundle=new Bundle();
+                                            userMsgBundle.putString("user_id",userMsg.getString("u_id"));
+                                            Intent mainView=new Intent(RegisterActivity.this,FragmentActivity.class);
+                                            mainView.putExtras(userMsgBundle);
+                                            startActivity(mainView);
                                         }
                                         Looper.loop();
                                     }

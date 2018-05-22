@@ -94,15 +94,19 @@ public class LoginActivity extends Activity {
                                     String Msg = response.body().string();
                                     try {
                                         JSONObject MsgJson = new JSONObject(Msg);
+                                        JSONObject userMsg=MsgJson.getJSONObject("data");
                                         Log.d(TAG, MsgJson.getString("msg"));
                                         Looper.prepare();//解决线程 1
                                         Toast.makeText(LoginActivity.this, MsgJson.getString("msg"), Toast.LENGTH_SHORT).show();
                                         if (MsgJson.getString("msg").equals("登录成功")) {
                                             //跳转页面
-                                            Intent test=new Intent(LoginActivity.this,TestActivity.class);
-                                            startActivity(test);
+                                            Bundle userMsgBundle=new Bundle();
+                                            userMsgBundle.putString("user_id",userMsg.getString("u_id"));
+                                            Intent mainView=new Intent(LoginActivity.this,FragmentActivity.class);
+                                            mainView.putExtras(userMsgBundle);
+                                            startActivity(mainView);
                                         }
-                                        Looper.loop();//解决线程 1
+                                        Looper.loop();//解决线程 2
                                     } catch (Exception e) {
                                         e.printStackTrace();
                                     }

@@ -12,7 +12,6 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme">
 
-
         <TextView
             android:id="@+id/txt_toolbarindex"
             android:layout_width="wrap_content"
@@ -21,26 +20,53 @@
             android:gravity="center"
             android:text="@string/list"
             android:textColor="@color/worddarkgreen"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
+
     </android.support.v7.widget.Toolbar>
-
-    <ListView
-        android:id="@+id/listviewlist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:minHeight="60dp">
-
-
-    </ListView>
-
     <TextView
-        android:id="@+id/txt_content"
+        android:id="@+id/things_today_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text=""
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_selector"
+        android:drawableLeft="@mipmap/icon_today"
+        android:drawablePadding="10dp"
+        android:text="@string/things_today"
+        android:textSize="16sp"
         android:textColor="@color/textGray"
-        android:textSize="20sp"/>
-
+        android:padding="15dp"
+        />
+    <TextView
+        android:id="@+id/things_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_selector"
+        android:drawableLeft="@mipmap/icon_done"
+        android:drawablePadding="10dp"
+        android:text="@string/things_done"
+        android:textSize="16sp"
+        android:textColor="@color/textGray"
+        android:padding="15dp"
+        />
+    <TextView
+        android:id="@+id/add_list_kind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_selector"
+        android:drawableLeft="@mipmap/icon_add"
+        android:drawablePadding="10dp"
+        android:text="@string/add_list"
+        android:textSize="16sp"
+        android:textColor="@color/textGreenBlue"
+        android:padding="15dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/hintTextGray"/>
+    <ListView
+        android:id="@+id/listview_list_kind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
 
 </LinearLayout>
